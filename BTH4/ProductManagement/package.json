@@ -1,0 +1,25 @@
+{
+  "name": "product-management",
+  "version": "1.0.0",
+  "description": "Product Management System with Microservices Architecture",
+  "type": "module",
+  "scripts": {
+    "dev:auth": "cd backend/auth-service && npm run dev",
+    "dev:product": "cd backend/product-service && npm run dev",
+    "dev:order": "cd backend/order-service && npm run dev",
+    "dev:gateway": "cd backend/api-gateway && npm run dev",
+    "dev:all": "concurrently \"npm run dev:auth\" \"npm run dev:product\" \"npm run dev:order\" \"npm run dev:gateway\"",
+    "install:all": "cd backend && npm install && cd auth-service && npm install && cd ../product-service && npm install && cd ../order-service && npm install && cd ../api-gateway && npm install"
+  },
+  "keywords": [
+    "microservices",
+    "soa",
+    "nodejs",
+    "consul"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
